@@ -16,6 +16,14 @@ done
 unset custom_config_file
 
 
-plugins=(alias autojump git zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search)
+plugins=(
+  alias 
+  autojump 
+  git 
+  zsh-autosuggestions 
+  zsh-syntax-highlighting 
+  zsh-history-substring-search
+  sudo
+  )
 source $ZSH_DIR/plugin.sh
 source $ZSH_DIR/theme.sh
