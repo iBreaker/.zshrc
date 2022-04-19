@@ -5,10 +5,14 @@
 # 
 
 
-ZSH_DIR="$HOME/zshrc"
+ZSH_PATH="$HOME/zshrc"
+ZSH_USER_PATH="$HOME/.zsh_path"
+
 # ZSH_CUSTOM_DIR=""
 
-for config_file ("$ZSH_DIR"/lib/*.zsh); do
+[[ -f "$ZSH_USER_PATH" ]] && source "$ZSH_USER_PATH"
+
+for config_file ("$ZSH_PATH"/lib/*.zsh); do
   custom_config_file="$ZSH_CUSTOM_DIR/lib/${config_file:t}"
   [[ -f "$custom_config_file" ]] && config_file="$custom_config_file"
   source "$config_file"
@@ -25,5 +29,5 @@ plugins=(
   zsh-history-substring-search
   sudo
   )
-source $ZSH_DIR/plugin.sh
-source $ZSH_DIR/theme.sh
+source $ZSH_PATH/plugin.sh
+source $ZSH_PATH/theme.sh
