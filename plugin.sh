@@ -1,3 +1,8 @@
+#!/usr/bin/env zsh
+# 
+#  @author: Breaker
+#  @date: 2022/04/19 15:38
+# 
 
 for plugin ($plugins); do
   if [[ -f "$ZSH_CUSTOM_DIR/plugins/$plugin.zsh" ]]; then

@@ -1,15 +1,15 @@
-autoload colors
-colors
-
-autoload -Uz compinit
-compinit
+#!/usr/bin/env zsh
+# 
+#  @author: Breaker
+#  @date: 2022/04/19 15:38
+# 
 
 
 ZSH_DIR="$HOME/zshrc"
 # ZSH_CUSTOM_DIR=""
 
 for config_file ("$ZSH_DIR"/lib/*.zsh); do
-  custom_config_file="$ZSH_CUSTOM/lib/${config_file:t}"
+  custom_config_file="$ZSH_CUSTOM_DIR/lib/${config_file:t}"
   [[ -f "$custom_config_file" ]] && config_file="$custom_config_file"
   source "$config_file"
 done
