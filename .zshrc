@@ -7,18 +7,16 @@
 
 ZSH_PATH="$HOME/zshrc"
 ZSH_USER_PATH="$HOME/.zsh_path"
-
-# ZSH_CUSTOM_DIR=""
+ZSH_CUSTOM_PATH=""
 
 [[ -f "$ZSH_USER_PATH" ]] && source "$ZSH_USER_PATH"
 
 for config_file ("$ZSH_PATH"/lib/*.zsh); do
-  custom_config_file="$ZSH_CUSTOM_DIR/lib/${config_file:t}"
+  custom_config_file="$ZSH_CUSTOM_PATH/lib/${config_file:t}"
   [[ -f "$custom_config_file" ]] && config_file="$custom_config_file"
   source "$config_file"
 done
 unset custom_config_file
-
 
 plugins=(
   alias 
